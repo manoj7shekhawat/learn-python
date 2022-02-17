@@ -1,12 +1,9 @@
 #!/usr/bin/env python3
 
-# Get city name
-city=input("Enter city name: ")
-pet=input("Enter pet name: ")
+# Get City name
+city=input("Enter Your City Name: ")
+pet=input("Enter Your Pet Name: ")
 
-print("Your band name: " + city + " " + pet)
-
-print(" Hello " + input("Your name:"))
-
+print("Your Band Name: " + city + " " + pet)
 
 
