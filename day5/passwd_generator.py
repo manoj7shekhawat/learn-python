@@ -20,13 +20,16 @@ sCount = nr_symbols
 rCount = nr_numbers
 for x in range(nr_letters + nr_symbols + nr_numbers):
     if (lCount > 0):
-        passwd += letters[random.randint(0, len(letters))]
+        #passwd += letters[random.randint(0, len(letters))]
+        passwd += random.choice(letters)
         lCount -= 1
     if sCount > 0:
-        passwd += symbols[random.randint(0, len(symbols))]
+        #passwd += symbols[random.randint(0, len(symbols))]
+        passwd += random.choice(symbols)
         sCount -= 1
     if rCount > 0:
-        passwd += numbers[random.randint(0, len(numbers))]
+        #passwd += numbers[random.randint(0, len(numbers))]
+        passwd += random.choice(numbers)
         rCount -= 1
 
 
