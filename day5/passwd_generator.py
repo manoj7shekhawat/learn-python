@@ -14,23 +14,22 @@ nr_numbers = int(input(f"How many numbers would you like?\n"))
 #Hard Level - Order of characters randomised:
 #e.g. 4 letter, 2 symbol, 2 number = g^2jk8&P
 
-passwd = ""
-lCount = nr_letters
-sCount = nr_symbols
-rCount = nr_numbers
-for x in range(nr_letters + nr_symbols + nr_numbers):
-    if (lCount > 0):
+passwd = []
+
+for x in range(nr_letters):
         #passwd += letters[random.randint(0, len(letters))]
-        passwd += random.choice(letters)
-        lCount -= 1
-    if sCount > 0:
+        passwd.append(random.choice(letters))
+
+for x in range(nr_symbols):
         #passwd += symbols[random.randint(0, len(symbols))]
-        passwd += random.choice(symbols)
-        sCount -= 1
-    if rCount > 0:
+        passwd.append(random.choice(symbols))
+
+for x in range(nr_numbers):
         #passwd += numbers[random.randint(0, len(numbers))]
+        # TODO: list we can use append or +
         passwd += random.choice(numbers)
-        rCount -= 1
 
+# Shuffle
+random.shuffle(passwd)
 
-print(f"Your password: {passwd}")
+print(f"Your password: " + ''.join(passwd))
