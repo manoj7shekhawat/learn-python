@@ -25,6 +25,8 @@ class Snake:
             myT.penup()
             myT.shape("square")
             myT.color("white")
+            if x == 0:
+                myT.color("red")
             myT.goto(POSITION[x])
             self.snakes.append(myT)
 
