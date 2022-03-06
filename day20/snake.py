@@ -8,6 +8,9 @@ NORTH = 90
 WEST = 180
 SOUTH = 270
 
+POSITION = [(0, 0), (-20, 0), (-40, 0)]
+
+SPEED = 0.1
 
 class Snake:
 
@@ -16,18 +19,26 @@ class Snake:
         self.createSnakes()
 
     def createSnakes(self):
-        xCor = 0
+
         for x in range(0, 3):
             myT = Turtle()
             myT.penup()
             myT.shape("square")
             myT.color("white")
-            myT.goto(xCor, 0)
-            xCor += -20
+            myT.goto(POSITION[x])
             self.snakes.append(myT)
 
+    def addSnake(self):
+        myT = Turtle()
+        myT.penup()
+        myT.shape("square")
+        myT.color("white")
+        myT.goto(self.snakes[-1].xcor()-20, self.snakes[-1].ycor())
+        self.snakes.append(myT)
+
+
     def move(self):
-        time.sleep(0.1)
+        time.sleep(SPEED)
         for x in range(len(self.snakes) - 1, 0, -1):
             newX = self.snakes[x - 1].xcor()
             newY = self.snakes[x - 1].ycor()
