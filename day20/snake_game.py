@@ -26,7 +26,7 @@ myS.onkey(snakeObj.moveLeft, "Left")
 
 gameOn = True
 
-while gameOn:
+while True:
     snakeObj.move()
     myS.update()
 
@@ -39,16 +39,15 @@ while gameOn:
 
     # Out of boundary
     if snakeObj.snakes[0].xcor() > 450 or snakeObj.snakes[0].xcor() < -450 or snakeObj.snakes[0].ycor() > 385 or snakeObj.snakes[0].ycor() < -385:
-        gameOn = False
-        score.gameOver()
+        snakeObj.reset()
+        score.resetScore()
 
 
     # If collided with tail
     for sn in snakeObj.snakes[1:]:
         if snakeObj.snakes[0].distance(sn) < 5:
-            gameOn = False
-            score.gameOver()
-            break
+            snakeObj.reset()
+            score.resetScore()
 
 
 myS.exitonclick()

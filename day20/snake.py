@@ -18,6 +18,13 @@ class Snake:
         self.snakes = []
         self.createSnakes()
 
+
+    def reset(self):
+        for x in range(0, len(self.snakes)):
+            self.snakes[x].hideturtle()
+        self.snakes = []
+        self.createSnakes()
+
     def createSnakes(self):
 
         for x in range(0, 3):
