@@ -49,7 +49,7 @@ while True:
 
 
 
-not_guessed_states = [x for x in all_states if (x not in guessed_states)]
+not_guessed_states = [x for x in all_states if x not in guessed_states]
 
 print(not_guessed_states)
 
