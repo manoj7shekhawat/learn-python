@@ -1,11 +1,11 @@
 import requests as rq
-
+import os
 
 MY_LAT = 51.107883
 MY_LON = 17.038538
 
 API_URL = "https://api.openweathermap.org/data/2.5/onecall"
-API_KEY = "a8cf7189a8d61d70236727b3bd8f9ede"
+API_KEY = os.environ.get("API_KEY")
 
 # https://api.openweathermap.org/data/2.5/onecall?lat=51.107883&lon=17.038538&exclude=minutely&units=metric&appid=a8cf7189a8d61d70236727b3bd8f9ede
 
