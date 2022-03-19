@@ -1,6 +1,7 @@
 import os
 from twilio.rest import Client
 
+
 class NotificationManager:
 
     def __init__(self, price, frm, to, from_date, to_date):
@@ -10,7 +11,6 @@ class NotificationManager:
         self.to = to
         self.from_date = from_date
         self.to_date = to_date
-
 
     def send_sms(self):
         account_sid = os.environ['TWILIO_ACCOUNT_SID']
