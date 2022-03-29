@@ -1,0 +1,22 @@
+{% extends 'bootstrap/base.html' %}
+{% import "bootstrap/wtf.html" as wtf %}
+
+{% block title %}
+Library
+{% endblock %}
+
+{% block content %}
+<h1>My Library</h1>
+    <ul>
+        {% if books %}
+            {% for book in books %}
+                <li>{{ book["title"] }} - {{ book["author"] }} - {{ book["rating"]}}/10</li>
+            {% endfor %}
+        {% else %}
+            <p>Library is empty</p>
+        {% endif %}
+    </ul>
+    
+<a href="">Add New Book</a>
+
+{% endblock %}
