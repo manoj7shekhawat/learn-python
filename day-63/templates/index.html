@@ -10,7 +10,11 @@ Library
     <ul>
         {% if books %}
             {% for book in books %}
-                <li>{{ book[1] }} - {{ book[2] }} - {{ (book[3])|int }}/10</li>
+                <li>
+                    <a href="{{ url_for('delete', id=book.id) }}">Delete</a>
+                    {{ book.title }} - {{ book.author }} - {{ book.rating }}/10
+                    <a href="{{ url_for('edit', id=book.id) }}">Edit Rating</a>
+                </li>
             {% endfor %}
         {% else %}
             <p>Library is empty</p>
