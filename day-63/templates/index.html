@@ -10,13 +10,13 @@ Library
     <ul>
         {% if books %}
             {% for book in books %}
-                <li>{{ book["title"] }} - {{ book["author"] }} - {{ book["rating"]}}/10</li>
+                <li>{{ book[1] }} - {{ book[2] }} - {{ (book[3])|int }}/10</li>
             {% endfor %}
         {% else %}
             <p>Library is empty</p>
         {% endif %}
     </ul>
     
-<a href="">Add New Book</a>
+<a href="add">Add New Book</a>
 
 {% endblock %}
