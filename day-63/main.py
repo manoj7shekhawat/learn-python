@@ -4,6 +4,7 @@ from flask_bootstrap import Bootstrap
 from wtforms import StringField, SubmitField, IntegerField
 from flask_sqlalchemy import SQLAlchemy
 
+
 app = Flask(__name__)
 app.secret_key = "any-string-you-want-just-keep-it-secret"
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:////tmp/new-books.db'
